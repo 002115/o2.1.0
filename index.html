@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Park Seo Yeon — Portfolio</title>
+  <meta name="description" content="Park Seo Yeon portfolio. Think · Plan · Make">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Park Seo Yeon — Portfolio</span><span>Think · Plan · Make</span><span>Park Seo Yeon — Portfolio</span><span>Think · Plan · Make</span>
+      <span>Park Seo Yeon — Portfolio</span><span>Think · Plan · Make</span><span>Park Seo Yeon — Portfolio</span><span>Think · Plan · Make</span>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <a class="logo" href="#top" aria-label="Park Seo Yeon">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div><a href="#profile">Profile</a><a href="#works">Works</a></div>
+      <div><a href="#archive">Archive</a></div>
+      <div><a href="#contact">Contact</a></div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="wordmark">portfolio.</h1>
+  </section>
+
+  <!-- Stacking images section -->
+  <section class="catalog-grid" id="works">
+    <div class="dots-layer" aria-hidden="true"></div>
+
+    <div class="col col-title">
+      <h2 class="sticky-title" id="profile" style="--i:0">Profile</h2>
+      <h2 class="sticky-title" style="--i:1">Milli</h2>
+      <h2 class="sticky-title" style="--i:2">Travel</h2>
+      <h2 class="sticky-title" style="--i:3">Dive</h2>
+      <h2 class="sticky-title" style="--i:4">Tree</h2>
+      <h2 class="sticky-title" style="--i:5">Love</h2>
+    </div>
+
+    <!-- Click a cover to open that project's detail pages (see PROJECTS in main.js) -->
+    <div class="col col-visual">
+      <div class="sticky-visual" style="--i:0; --w:88%"><button type="button" class="visual-btn" data-project="0" aria-label="Profile — view details"><img src="assets/detail/p02-R.jpg" alt="Portfolio cover"></button></div>
+      <div class="sticky-visual" style="--i:1; --w:76%"><button type="button" class="visual-btn" data-project="1" aria-label="밀리의 서재 웹컨키트 제작 — view details"><img src="assets/detail/p07-L.jpg" alt="밀리의 서재 웹컨키트 제작"></button></div>
+      <div class="sticky-visual" style="--i:2; --w:92%"><button type="button" class="visual-btn" data-project="2" aria-label="나의여행기록 카드뉴스 제작 — view details"><img src="assets/detail/p13-L.jpg" alt="나의여행기록 카드뉴스 제작"></button></div>
+      <div class="sticky-visual" style="--i:3; --w:70%"><button type="button" class="visual-btn" data-project="3" aria-label="머리부터 천천히 북커버 — view details"><img src="assets/detail/p18-L.jpg" alt="머리부터 천천히 북커버 디자인"></button></div>
+      <div class="sticky-visual" style="--i:4; --w:82%"><button type="button" class="visual-btn" data-project="4" aria-label="젊은 느티나무 북커버 — view details"><img src="assets/detail/p19-L.jpg" alt="젊은 느티나무 북커버 디자인"></button></div>
+      <div class="sticky-visual" style="--i:5; --w:78%"><button type="button" class="visual-btn" data-project="5" aria-label="사랑 선언 북 디자인 — view details"><img src="assets/detail/p21-L.jpg" alt="사랑 선언 북 디자인"></button></div>
+    </div>
+
+    <div class="col col-title right">
+      <div class="sticky-links" style="--i:0"><button type="button" data-project="0">Cover <span>↗</span></button></div>
+      <div class="sticky-links" style="--i:1"><button type="button" data-project="1">Web kit <span>↗</span></button></div>
+      <div class="sticky-links" style="--i:2"><button type="button" data-project="2">Card news <span>↗</span></button></div>
+      <div class="sticky-links" style="--i:3"><button type="button" data-project="3">Bookcover <span>↗</span></button></div>
+      <div class="sticky-links" style="--i:4"><button type="button" data-project="4">Bookcover <span>↗</span></button></div>
+      <div class="sticky-links" style="--i:5"><button type="button" data-project="5">Book <span>↗</span></button></div>
+    </div>
+  </section>
+
+  <!-- Globe section -->
+  <section class="featured" id="archive">
+    <div class="featured-inner">
+      <div class="featured-heading" aria-hidden="true">
+        <span class="h-left">Selected</span>
+        <span class="h-right">Work</span>
+      </div>
+      <div class="featured-globe" role="img" aria-label="Portfolio pages arranged on a rotating globe">
+        <canvas id="globe"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <p class="footer-title">Park Seo Yeon</p>
+  <p class="footer-sub">Think · Plan · Make</p>
+  <p class="footer-copy">© Park Seo Yeon. All rights reserved.</p>
+</footer>
+
+<!-- Project detail viewer -->
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <div class="detail-bar">
+    <div class="detail-head">
+      <p class="detail-index" id="detail-index"></p>
+      <h2 class="detail-title" id="detail-title"></h2>
+    </div>
+    <button type="button" class="detail-close" id="detail-close" aria-label="Close">Close <span>×</span></button>
+  </div>
+  <article class="dt" id="detail-body"></article>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/globe-images.js"></script>
+<script src="projects.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
